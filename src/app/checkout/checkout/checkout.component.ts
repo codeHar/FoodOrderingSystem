@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FoodData } from 'src/app/shared/interfaces/FoodData';
+import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({
   selector: 'app-checkout',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor() { }
+  cartItems:FoodData[]=[]
+  totalPrice:string="0"
+
+  constructor(private cartService:CartService) { }
 
   ngOnInit(): void {
+    this.cartItems=this.cartService.getFoodsInCart()
+    this.totalPrice=this.cartService.getTotalPrice().toString()
   }
+
+
 
 }

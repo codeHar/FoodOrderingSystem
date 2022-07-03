@@ -10,6 +10,14 @@ const routes: Routes = [
   {
     path:"home",
     loadChildren:()=>import("./home-page/home-page.module").then(m=>m.HomePageModule)
+  },
+  {
+    path:"details/:id",
+    loadChildren:()=>import("./item-detail/item-detail.module").then(m=>m.ItemDetailModule)
+  },
+  {
+    path:'checkout',
+    loadChildren:()=>import("./checkout/checkout.module").then(m=>m.CheckoutModule)
   }
 ];
 

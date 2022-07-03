@@ -1,1 +1,17 @@
-<p>item-detail works!</p>
+<div class="col-sm-8 col-md-6 mx-auto py-4">
+    <div class="card" style="width:100%">
+        <img src={{currentFood.img}} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{currentFood.name}}</h5>
+          <p class="card-text">{{currentFood.description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Price: Rs.{{currentFood.price}}</li>
+          <li class="list-group-item">Location: {{currentFood.location}}</li>
+          <li class="list-group-item">Rating: {{currentFood.rating}}</li>
+        </ul>
+        <div class="card-body">
+          <button (click)="addToCart()" class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+</div>
